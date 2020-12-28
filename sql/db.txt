@@ -1,0 +1,191 @@
+SQL - Structured Query Language
+SQL keywords are case insensitive
+Values from select are emitted in the specified sequence.
+
+SELECT -    SELECT col1, col2 FROM table;
+            SELECT * FROM table;
+
+DISTINCT - SELECT DISTINCT col1 FROM table;
+
+COUNT - SELECT COUNT(DISTINCT col1) FROM table;
+
+WHERE - SELECT col1, col2 FROM table WHERE col1 = <value>
+
+AND,OR,NOT - SELECT col1, col2 FROM table WHERE col1 = <value> AND col2 = <value>
+
+MOD - to get modulus of naumebr %. MOD(N,n)
+
+ORDER BY - by default it is ascending. ASC or DESC.
+            SELECT col1, col2, FROM table ORDER BY col1 ASC, col2 DESC;
+
+INSERT INTO - to insert values in the database.
+        INSERT INTO table (col1, col2, col3, ....) VALUES (value1, value2, value3, ....);
+
+IS NULL/ IS NOT NULL -  to check the value of columns wether they are null or filled.
+        SELECT col1, col2 FROM table WHERE col1 IS NULL AND col2 IS NOT NULL.
+
+UPDATE -  Update the records of table. WHERE condition must be properly used if missed all records will be updated.
+
+            UPDATE table SET col1 = val, col2 = val, col3 = val WHERE col1 = value1
+
+DELETE - use with caution under WHERE clause.
+        DELETE FROM table WHERE col1 = val;
+
+TOP/LIMIT/ROMNUM - SELECT TOP 3 FROM table;
+                    SELECT TOP 50 PERCENT FROM table;
+                    SELECT * FROM table LIMIT 3;
+                    SELECT * FROM table 
+
+MIN()  -    SELECT MIN(col1) from table;
+
+MAX()  -    Select MAX(col2) from table;
+
+COUNT() - select count(col1) from table where col1 = val;
+
+AVG() - select avg(col1) from table;
+
+SUM() - select sum(col1) from table where col1 = value;
+
+We can take arithematic operation before select statement.
+
+select MAX(col1) - MIN(col1) from table;
+
+LIKE - _ is for character and % is for one or more.
+
+        select col1 from table where col2 LIKE %bh%;
+[]  -   any single char within bracket
+        select col1 from table where col2 LIKE [ab]
+^   -  any char not in range    
+        select col1 from table where col2 LIKE [^abc]
+-       any char within range
+        select col1 from table where col2 like [a-c]
+
+IN - for multple values in where clause or multiple statement
+
+    select col1, col2 from table where col1 IN (val1,val2,val3)
+
+    select col1, col2 from table where col1 IN (other select statement)
+
+BETWEEN  -  select col1 from table where col1 between value1 and value2;
+
+Aliases -  giving names to columns.
+
+        select col1 as column from table.
+
+        to avoid space in alias name use [].
+
+INNER JOIN - records with only matching values.
+LEFT JOIN -  all records of left and matched records from right.
+RIGHT JOIN  - all record of right and matched records from left.
+FULL JOIN   -   all records from both .
+
+
+INNER JOIN -  joining two tables.
+        select s.col1, c.col1 from c inner join s on s.col2 = c.col2;
+
+        joining three tables.
+        select a.col1, b.col1, c.col1 from ( a inner join b on a.col1 = b.col1) inner join c on a.col1 = c.col1;
+
+select o.OrderID, e.FirstName, s.ShipperName from (Orders as o inner join Employees as e on o.EmployeeID = e.EmployeeID) inner join Shippers as s on o.ShipperID = s.ShipperID order by FirstName;
+
+self join is by giving aliases to same table
+
+UNION - groups result of more than one select of same type.
+
+GROUP BY -  to group and it i motly used with COUNT, MI, MAX, AVG, SUM.
+
+        select col1 from table where col2 = value group by col3
+
+Group by with join -
+        select table1.col1, count(table2.col2) from table1. table2 where table1.col - table2.col group by col2
+
+HAVING - 
+
+
+row_number() over (partition by country order by creditlimit ) as row_num
+
+
+select * from 
+(select bike_id,trip_date, duration as fride
+row_number() over(partition by trip_date, bike_id order by trip_start_time) as frno
+from trip
+group by trip_date, bike_id
+) t1
+left join 
+(select bike_id, trip_date, duration as lride
+row_number() over(partition by trip_date, bike_id order by trip_start_time desc) as lrno
+from trip
+group by trip_date, bike_id
+) t2
+on (t1.trip_date = t2.trip_date and t1.bike_id = t2.bike_id)
+
+
+
+
+
+
+
+
+--------------------
+
+
+
+
+
+select grade , count(distinct student_id) as total_student , 
+sum(case when num_topics_cleared = grade_topics then 1 else 0 end )/count(distinct student_id) as percent_passed
+
+from
+(select * 
+
+from
+student_tuden st
+left join
+
+(select student_id, count(distinct topic_id) as num_topic_cleared
+from student_topics ss
+
+where ss.test_cleared = 'TRUE'
+group by student_id) a on st.student_id = a.student_id
+left join 
+(select grade, count(distinct topic_id) as grade_topics
+from topic_topic
+group by grade) b
+on b.grade = st.grade) abc 
+group by 1
+	
+
+
+----------------
+
+
+
+select creditlimit , customernumber, country
+, 
+first_value(creditLimit) over (partition by country order by customerNumber ) as first_val,
+last_value(creditlimit) over (partition by country order by customerNumber ) as last_cutomer
+from customers 
+
+
+---------------------------
+
+
+select * from 
+(select bike_id,trip_date, duration as fride
+row_number() over(partition by trip_date, bike_id order by trip_start_time) as frno
+from trip
+group by trip_date, bike_id
+) t1
+left join 
+(select bike_id, trip_date, duration as lride
+row_number() over(partition by trip_date, bike_id order by trip_start_time desc) as lrno
+from trip
+group by trip_date, bike_id
+) t2
+on (t1.trip_date = t2.trip_date and t1.bike_id = t2.bike_id)
+
+
+-----------------------
+
+
+
