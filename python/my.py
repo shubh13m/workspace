@@ -9,4 +9,8 @@ data = {'Name':['Tom', 'nick', 'krish', 'jack'],
         'Age':[20, 21, 19, 18]}
 df = pnd.DataFrame(data)
 print(df)
-print("shubham")
+print("shubham pandey")
+
+name = input("Enter first name")
+date = input("Enter birth date")
+print(name+date)
