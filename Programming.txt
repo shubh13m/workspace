@@ -1,0 +1,303 @@
+
+
+*************************************************************************
+
+
+stringstream is a stream class to operate on strings. It basically implements input/output operations on memory (string) based streams. stringstream can be helpful in different type of parsing. The following operators/functions are commonly used here
+
+Operator >> Extracts formatted data.
+Operator << Inserts formatted data.
+Method str() Gets the contents of underlying string device object.
+Method str(string) Sets the contents of underlying string device object.
+Its header file is sstream.
+
+One common use of this class is to parse comma-separated integers from a string (e.g., "23,4,56").
+
+stringstream ss("23,4,56");
+char ch;
+int a, b, c;
+ss >> a >> ch >> b >> ch >> c;  // a = 23, b = 4, c = 56
+You have to complete the function vector parseInts(string str). str will be a string consisting of comma-separated integers, and you have to return a vector of int representing the integers.
+
+Note If you want to know how to push elements in a vector, solve the first problem in the STL chapter.
+
+Input Format
+
+The first and only line consists of n integers separated by commas.
+
+Output Format
+
+Print the integers after parsing it.
+
+P.S.: I/O will be automatically handled. You need to complete the function only.
+
+Sample Input
+
+23,4,56
+Sample Output
+
+23
+4
+56
+
+
+
+
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str) {
+	// Complete this function
+    stringstream s(str);
+    int len = str.length();
+    int temp;
+    char ch;
+    vector<int> myvector;
+    while(s >> temp){
+        myvector.push_back(temp);
+        s >> ch;
+    }
+    return myvector;
+}
+
+int main() {
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
+    for(int i = 0; i < integers.size(); i++) {
+        cout << integers[i] << "\n";
+    }
+    
+    return 0;
+}
+
+
+*********************************************************************
+
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+//Implement the class Box  
+//l,b,h are integers representing the dimensions of the box
+
+// The class should have the following functions : 
+
+// Constructors: 
+// Box();
+// Box(int,int,int);
+// Box(Box);
+
+
+// int getLength(); // Return box's length
+// int getBreadth (); // Return box's breadth
+// int getHeight ();  //Return box's height
+// long long CalculateVolume(); // Return the volume of the box
+
+//Overload operator < as specified
+//bool operator<(Box& b)
+
+//Overload operator << as specified
+//ostream& operator<<(ostream& out, Box& B)
+class Box{
+    public:
+        int length, breadth,height;
+
+        Box(){
+            length = 0;
+            breadth = 0;
+            height = 0;
+        }
+        Box(int l, int b, int h){
+            length = l;
+            breadth = b;
+            height = h;
+        }
+        Box(Box& b){
+            length =  b.length;
+            breadth = b.breadth;
+            height = b.height;
+        }
+        int getLength(){return length;}
+        int getBreadth (){return breadth;}
+        int getHeight (){return height;}
+        long long CalculateVolume(){
+            long long result = length;
+            result *= breadth;
+            result *= height;
+            return result;}
+
+        bool operator < (Box& b){
+            if(length < b.length){ return true;}
+            else if((breadth < b.breadth) && (length ==  b.length)) {return true;}
+            else if((height < b.height) &&(breadth == b.breadth) && (length ==  b.length)){return true;}
+            else return false;
+
+        }
+};
+
+ostream& operator << (ostream &out, const Box &b){
+        out << b.length << " " << b.breadth << " " << b.height;
+        return out;
+}
+
+
+void check2()
+{
+	int n;
+	cin>>n;
+	Box temp;
+	for(int i=0;i<n;i++)
+	{
+		int type;
+		cin>>type;
+		if(type ==1)
+		{
+			cout<<temp<<endl;
+		}
+		if(type == 2)
+		{
+			int l,b,h;
+			cin>>l>>b>>h;
+			Box NewBox(l,b,h);
+			temp=NewBox;
+			cout<<temp<<endl;
+		}
+		if(type==3)
+		{
+			int l,b,h;
+			cin>>l>>b>>h;
+			Box NewBox(l,b,h);
+			if(NewBox<temp)
+			{
+				cout<<"Lesser\n";
+			}
+			else
+			{
+				cout<<"Greater\n";
+			}
+		}
+		if(type==4)
+		{
+			cout<<temp.CalculateVolume()<<endl;
+		}
+		if(type==5)
+		{
+			Box NewBox(temp);
+			cout<<NewBox<<endl;
+		}
+
+	}
+}
+
+int main()
+{
+	check2();
+}
+
+6
+2 1039 3749 8473
+4
+3 1456 3836 283
+3 729 3749 272
+2 4839 283 273
+4
+
+*********************************************************************************
+Your friend set up a small computational server that performs complex calculations.
+It has a function that takes  large numbers as its input and returns a numeric result. Unfortunately, there are various exceptions that may occur during execution.
+
+Complete the code in your editor so that it prints appropriate error messages, should anything go wrong. The expected behavior is defined as follows:
+
+If the compute function runs fine with the given arguments, then print the result of the function call.
+If it fails to allocate the memory that it needs, print Not enough memory.
+If any other standard C++ exception occurs, print Exception: S where  is the exception's error message.
+If any non-standard exception occurs, print Other Exception.
+Input Format
+
+The first line contains an integer, , the number of test cases.
+Each of the  subsequent lines describes a test case as  space-separated integers,  and , respectively.
+
+Constraints
+
+
+
+Output Format
+
+For each test case, print a single line containing whichever message described in the Problem Statement above is appropriate. After all messages have been printed, the locked stub code in your editor prints the server load.
+
+Sample Input
+
+2
+-8 5
+1435434255433 5
+Sample Output
+
+Exception: A is negative
+Not enough memory
+2
+Explanation
+
+ is negative, hence 'Exception: A is negative' is thrown. Since the second input is too large, 'not enough memory' is displayed.  is the server load.
+
+ 
+#include <iostream>
+#include <exception>
+#include <string>
+#include <stdexcept>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+class Server {
+private:
+	static int load;
+public:
+	static int compute(long long A, long long B) {
+		load += 1;
+		if(A < 0) {
+			throw std::invalid_argument("A is negative");
+		}
+		vector<int> v(A, 0);
+		int real = -1, cmplx = sqrt(-1);
+		if(B == 0) throw 0;
+		real = (A/B)*real;
+		int ans = v.at(B);
+		return real + A - B*ans;
+	}
+	static int getLoad() {
+		return load;
+	}
+};
+int Server::load = 0;
+
+int main() {
+	int T; cin >> T;
+	while(T--) {
+		long long A, B;
+		cin >> A >> B;
+
+		/* Enter your code here. */
+        Server s1;
+        try{
+            cout << s1.compute(A,B) << endl; 
+        }
+        catch(bad_alloc& e){
+            cout << "Not enough memory" << endl;
+        }
+        catch(exception& e){
+            cout << "Exception: " << e.what() << endl;
+        }
+        catch(...){
+            cout << "Other Exception" << endl ;
+        }
+
+	}
+	cout << Server::getLoad() << endl;
+	return 0;
+}
+
+********************************************************************************

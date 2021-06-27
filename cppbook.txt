@@ -1,0 +1,1068 @@
+C++ : advantages speed of speed and low level language.
+		gives machine dependent code as output.
+
+Cin >>	when we enter more than one value without pressing enter just by 10 20 using space then after reading 10, 20 remains in buffer.
+
+Array Vs Vector :	Vector has dynamic size and builtin functions
+-----------------
+		Get maximum element of an array.
+		int res = *max_element(arr,arr+n);
+New Operator:
+	How to dynamically allocate 2D array:
+	----------------------------------
+		1. taking size in two variables at runtime. 
+			storing diff num of elements in each row.
+			Use new
+			cin >> m;
+			int ** A = new int*[m];
+			for(int i=0;i<m;i++){
+				cin >> n;
+				A[i] = new int[n];
+				for(int j=0; j<n;j++){
+					cin >> A[i][j];
+				}
+			}
+
+	Always deallocate memory created by new.
+	Unless a try and throw is not used if memory is not allocated then NULL pointer is returned or bad_alloc exception is thrown
+
+Delete :
+	delete <var>
+	delete[] <var>
+
+
+Functions
+------------
+
+	int main(){}
+	int main(int argc, char *argv[])
+	int myfunction(int x, float y);
+	int myfunction(int x,);
+	int myfunction(int);	
+	int myfunction(int x, float y,z) //wrong
+	
+	Call by reference : 
+				
+				int swap(int &a, int &b); 	//correct 
+				swap(a,b);
+				
+				int swap(int *a, int *b);	//correct
+				swap(&a,&b);
+				
+	Return by refrence :
+	
+				int & max(int &x, int&y){}
+				
+				Also we can keep the calling function  on left hand side.
+				
+	Default arguments: 
+				int interest(int p, int r, int t=5);
+				interest(200,4);
+				interset(200,4,2);
+				
+	Function Overloading:
+				same name different arguments. Compiler checks types and number of argument to find the correct function call.
+				
+	Maths library functions:
+				ceil(x), pow(x,y), sin(x), sqrt(x), cos(x), log(x), floor(x), exp(x)
+				
+				Double is returned.
+
+
+Class and Objects :
+--------------------
+				
+				Only difference between class and structure is by default class members are  private and by default the structure members are public. 
+				
+			Class is a way to bind data and its functions.
+			
+			Class specification has two parts.
+				1. class declaration.
+				2. funtion definition.
+			class keyword is used and enclosed in braces terminated with semicolon.
+			function and variables are called data members. grouped in two sections private and public.
+				
+				private :  only with in class 
+				public : outside the class.
+				
+			variables are known as data members and functions as member functions.
+			Only member functions can have access to private data members and functions.
+			Public members can be access outside of the class.
+				---- example ----
+				class item{
+						int number;
+						float cost;
+					public :
+						void getdata(int a, int b); // assigns value to number and cost
+						void putdata(void);	// prints values
+				};
+			
+				---- object ----
+				item x;
+				x.getdata(10,5);
+				x.putdata();
+			
+	Declaring function outside class:
+
+			<return-type> class-name :: function-name (arguments){ //body }
+
+			void item :: getdata(int x, float y){
+				number = x;
+				cost = y;
+			}
+
+			void item :: putdata(void){
+				cout << "Number : " << number << endl;
+				cout << "Cost : " << cost << endl;
+			}
+			
+	Private Member Function:
+
+		private memebr function can only be invoked by other member function.
+		Even a object of class cannot call private member function using dot operator.
+				
+	Static Data Member :
+		One copy is maintained across all objects of the class.
+		It is intialised to zero by default.
+		use static keyword.
+			static int eId;
+		We also have to define every static object outside the class
+			<type> <class> :: <name>;
+ 			
+			 class Student{
+				 static int fund;
+			 }
+
+			 int Student :: fund;
+
+	Static Member Function:
+			use keyword static to declare static member functions.
+			They have access to only static members no other non static data memebr.
+			Also to call any static memebr function we have to use class name also.
+			No object is required to call any static member function.
+
+			<class> :: <fname>	
+	
+	objects as arguments:
+			In place of type use class name.
+
+	Friend function:
+		function used by many classes:
+			Declare function outside of class and to use it in a class use keyword friend.
+			It doesnot need an object to call it. Instead it takes 
+		
+		function of one class friend of other: *******************
+			to use member function of one class as friend to other use keyword friend and specify class
+
+	
+	Return an object:
+
+		make class name as return type.
+	
+	Pointer to an object and members:
+
+		class A{
+			int x;
+		}
+
+		A a;
+			
+		Declaring a pointer to x is like 
+			int A::* p = &A:: x; 
+			a.x is also a.*p;
+
+
+Connstructors and Destructors :
+---------------------------------
+	getdata and putdata cannot be used to initialize the member variables at the  time of creation
+	Special member functions called constructor creates object when created and another member function
+	called destructor deletes these object when not in use.
+
+
+	Constructor name is same as the name of class.
+	It is invoked whenever any object of assosciated class is created.
+
+		class Student {
+
+			int rollNo;
+			int cls;
+			string name;
+
+			public:
+				Student(void) {
+					cls = 4;
+				}
+		}
+	
+
+		Student s; 	// created and initialised.
+
+
+	Constructor that takes no parameter are called default constructor.
+
+	Constructor	should be declared in public section.
+	They are invoked automatically.
+	They dont have return type.
+	Cannot be inherited but derived class can call base class consturctor.
+
+	Parameterised Constructors :
+	---------------------------
+		To initailize different members with different values constructor can take value as arguments.
+
+		class Student {
+			int cls;
+			string name;
+
+			public:
+				Student(int arg1, string arg2){
+					cls = arg1;
+					name = arg2;
+				}
+		};
+
+		Student :: Student(int x, int y);
+
+		Student s(10,"myname");
+
+	Copy Constructor :
+	-------------------
+		A constructor that takes refrence of its own class as parameter is called copy constructor.
+
+		class student{
+
+			public:
+				student( student&);
+		}
+
+		Even if we do not declare a copy constructor, the compiler has its own copy constructor.
+		Ths default copy constructor does the shallow copying.
+			i.e. if we change value in one constructor it will change original value. It doesnot make new copy of consturctor.
+
+	Constructor Overloading:
+	-------------------------
+		There can be more than one constructore for the same class by varying the arguments of the constructors.
+
+		integer() {m=0;n=0;}
+		integer(int x, int y){m=x;n=y;}
+		integer(integer &i){m = i.m; n=i.n;}
+
+		If more than one constructors are defined for a class then it is necessary to define constructor with no arg.
+
+	Destructors:
+	------------
+		Used to vacate memory by using delete. Good practice to call destructor at end.
+		~<name>(){}
+		As the program control leaves the current block objects start getting destroyed in the reverse order of their creation.
+
+Inheritance :
+-------------
+	The mechanism of deriving a new class from a base class is called as Inheritance.
+	Old class is known as base class and New class is called as derived class.
+	
+
+	Defining derived class :
+	------------------------
+		class derived-class-name : visibility base-class-name{
+			members of derived class
+		}	
+
+		Default visibilty is private.
+
+		class derived : public base{}
+		class derived : private base{}
+		class derived : base{}		//private by Default
+		When base is privately derived then public members of base become private to derived and they can be accessed only by member fucntions of the derived class. Not accessible by objects.
+		When base is publically inherited then public members become public to the base class.
+		Private members of base can never be accessed by derived class.
+
+	Single Inheritance :
+	---------------------
+			When a class is derived from a base class then it is called single inheritance. A --> b
+	
+	MultiLevel Inheritance :
+	-----------------------
+			when a class is derived from another derived class then it is called multiLevel Inheritance. A --> B --> C 
+
+	
+	when a class is derived publically then its private data members of base class are not derived.
+												protected data members are protected in derived also.
+												public data members are also available in derived class
+							
+							privately then its private members are not derived.
+												protected members are now private
+												and its public members are also private.
+							
+							protected the its private members not available 
+												public and protected are now protect.
+
+
+
+*********************************
+
+	a private data member of base class that is publically derived is inaccessible in derived class function
+	a private data member of base class that is publically derived is inaccessible in derived class object
+	a proteced data member of base class that is publically derived is accessible in derived class function
+	a proteced data member of base class that is publically derived is inaccessible in derived class object.
+	a public data member of base class that is publically derived is accessible in derived class function
+	a public data member of base class that is publically derived is accessible in derived class object.
+
+
+	a private data member of base class that is privately  derived is inaccessible in derived class function
+	a private data member of base class that is privately  derived is inaccessible in derived class object
+	a proteced data member of base class that is privately  derived is inaccessible in derived class function
+	a proteced data member of base class that is privately  derived is inaccessible in derived class object.
+	a public data member of base class that is privately derived is inaccessible in derived class function
+	a public data member of base class that is privately derived is inaccessible in derived class object.
+
+	if protected then by function not object. same for subsquent classes
+
+*********************************
+
+	Multiple inheritance :
+	----------------------
+			when a class is derived from more than one class and inherits their member. 
+
+	Hybrid Inheritance :		Multilevel + Multiple is Hybrid
+	---------------------
+
+			In some cases ambiguity is also seen and is taken care by scope resolution operator.
+
+
+	Virtual Base Class : 
+	-------------------
+			lets say we have one grand parent, two parent classes that inherits grand parenmt class and one child class that inherits from both parents. 
+
+			So there exist two paths from child to grandparent class. 
+			So duplicate path will create an additional copy of data. 
+
+			while inheriting the grand parent class, parent classes use virtual keyword. 
+
+			class Parent : virtual public GrandParent {}
+
+			this will take care of duplication in child class.
+			any no of paths can be allowed and have no side effect when virtual is used.
+
+
+	Constructors in derived class : 
+	------------------------------
+
+			As long as the constructor in base class doesnot take any argument then derived class need not have the constructor.
+			
+			If base construtor takes argunment then derived class needs to define the constructor and pass the argmuents to base class.
+
+			Constructor of base class will be called first then constructor of derived class.
+			In case of multiple inheritance the order of base class constructor call in the order they are defined in derived class.
+
+			class <Derived-name> {
+
+				<Derive-name> (int x, int y) : <base1>(x), <base2>(y) {
+
+				}
+
+			}
+
+
+		class Child { 
+			Child (int x, int y, int z) : Father(x), Mother(y){
+				age = z;
+			}
+		};
+
+		Child c(1,2,3);
+
+		Constructor of virtual base class are invokded first then non-virtual base class constructor.
+
+		Pointer :
+		----------
+
+			pointers store the memory address of some other variables and the return the values stored in those variables.
+			
+			<data-type>  *<pointer-name>;
+
+			int *ptr,a;		//declaration
+			ptr = &a;		//initialisation
+
+			pointer to an array :
+			---------------------
+				int arr[3] = {1,4,6};
+				int *ptr = arr;
+
+				ptr + 1 is &arr[1]
+				*(ptr + 1) is value stored in arr[1]
+
+			Arr of pointer :
+			----------------
+
+			int *ptr[10]; this will is an array that conatins pointers to integers.
+
+			Pointer to functions:
+			---------------------
+
+			We can create a pointer that points to a function. And also we can use the same pointer to pass the funtion as an argumet to some other function.
+
+			int (*function)();
+
+			Pointer to Objects :
+			--------------------
+
+			first declare an object of a class. 
+			<class-name> <object>;
+			<class-name> *ptr = &<object>;
+
+			item x;
+			item *ptr = &x;
+
+			x.getdata(1,2);
+			ptr->getdata(1,2);
+
+			We can also use new keyword. 
+			item *ptr = new item;
+
+			this Pointer :
+			--------------
+			to represent an object that invokes a member function. a unique pointer that is passed implicitly.
+
+			Virtual function:
+			-----------------
+				A base pointer when made to contain address of derived class then also it takes the functions of the base class only. 
+				To determine function at runtime based on the type of the object pointed to we use viratul function.
+
+			
+			pure virtual functions:
+			-----------------------
+			do-nothing function.  when a pure virtual function is in a base then C++ make it compulsary for all derived classes to redeclare or define this new function.
+
+			such clases are called abstract base class.
+			Also no object should be present for such classes.
+
+
+	Console IO:
+	-----------
+		C++ uses the stream and stream class to implement its IO operations with console and disk files.
+		Independent to device there is an interface called stream that takes inputs from user and gives bytes to the program through input stream and takes byte from program and send to console through output stream.
+
+		Several predefined streams are there that automatically opens up when program start like cin cout.		
+
+		Base class ios is the base of istream and ostream. which are in turn are the base of iostream. ios is made a virtual base class to avoid duplicate in iostream. ios also gives a pointer to the buffer object.
+
+		Cin :
+		-----
+			cin >> var1 >> var2;	when c++ encounters such statement it stops the execution and waits for the input. 
+			It reads the input char by char and as soon as the white space or new line or char not matching type of destination is seen it terminates.
+
+			like int var; cin >> var;
+			123a will take 123 as input
+
+				int age; char name[10]; cin>>age>>name;
+				12
+				shubh ------------ both taken
+				12
+				13 -------------- btoth taken
+				shubh	--------- terminates as char doesnt matches int
+				12 shubh ----------- both taken 
+				12 13 ------------- bith taken
+				12 shubh parenmt ------------ 12 and shubh taken
+				12
+				shubh pan -------------- 12 and shubh taken
+
+			if after space the matchkind matches then it is taken orthewise ignored.
+
+		put() and get() functions:
+		--------------------------
+			put and get reads from the buffer character by character. cin and cout objects used to invoke these.
+			get can be used get(str) or get() and put(str).
+			To read a complete line get and put should be used in a loop. If loop terminates early then still the buffer holds the rmaining characters.
+
+		getline() and writeline():
+		--------------------------
+			getline() reads the whole line that ends with the newline return.
+			cin.getline(line,size);
+			reading is terminated as newline is encountered or size-1 are read.
+
+			char name[0];
+			cin.getline(name,20);
+
+			cin >> can only read input with no blank spaces and getline replaces the last newline char with null char.
+
+			cout.write(name,size);  siz in number of characters to display.
+
+		Formatted Console :
+		-------------------
+			ios class function
+			manipulators
+			user-defined output
+
+			*cout.width(5); this sets width only for the next output and rest is default. 
+			cout << 546;
+			_ _ _ _ _ 
+			    5 4 6
+			
+			If value exceeds the width then values is not truncated.
+
+			*cout.precision(2);
+			if value is greater then 2 then it is rounded off and the truncated. Once this setting is then c++ retains this.
+			cout.precision(3);
+			cout << 512.12345;
+			512.123
+			Also the trailling zeros are removed.
+			cout<< 512.12376 << 512.1202;
+			512.124 512.12
+
+			cout.fill('*') fills the width * character 
+			
+			Manipulators are easy to use that ios. We canconcatenate the manipulator.
+			iomanip shoud be included.
+
+			cut << setw() << setprecision() << setfill()
+
+			User defined Manip:
+			-------------------
+
+			ostream &  <name> (ostream& <var>){
+				.....code
+
+				return <var>
+			}
+
+			cout << 2 << <var>;
+
+	
+
+	Exception Handling:
+	-------------------
+		Exceptions are runtime anamolies that happens duing execution.
+		Two kind od exeptions are there - syncronuous and asynchronous.
+			Overflow and index-out of bound exception are synchronous
+			Divide by zero and some interupt are asynchronous.
+
+			three keywords are used try, throw and catch.
+		Exceptions are objects used to transmit information.
+		If type of object thrown matches the arg type in catch then that catch block is executed after finishing the catch block next statements are executed.
+		When no catch block matches then default abort() function executes.  
+			
+		Catch All Exceptions:
+		---------------------
+			to catch all the exceptions whatever is thrown. use,
+
+			catch(...){
+				//this will catch all thrown 
+				// it is good to place this in the end, to catch all handlers not explicity specified
+			}
+
+		
+		Rethrowning an exception:
+		------------------------
+			it is possible that any error catched to be thrown again. 
+			This will be catched my appropiate matching exception.
+
+			we will us throw; to throw any error again. 
+			Such rethrowing of error is usually seen in exception inside function or constructors.
+
+		Specifying exception :
+		---------------------
+			We can specify what all exceptions a function will return by adding a list.
+
+			int <funct-name> throw(<type1>,<type2>){}
+
+		Exception Handling for constaructor and Destructors:
+		----------------------------------------------------
+			It is possible that we may encounter an error while creating an object and some data member of the object might get memory but because of error and termination we may face memory leak.
+			So we should handle exceptions in constructors and destructors. and delete allocated space.
+
+
+	Manipulating Strings:
+	----------------------
+
+	C++ provides a ew class called string. 
+	The sring object can be used like any other data built in data type.
+
+	creating a string :				string str;
+	--------------------
+					read a complete line using getline.
+
+					getline(cin,str)
+
+
+	Working with files:
+	-------------------
+		Data transfer from console to program and from program to disk.
+		Stream that supplies data to stream is called input stream and stream that supplies data from program is 
+		called output stream.
+
+		ifstream ofstream fstream  derived from fstreambase.
+
+		Opening a file using constructor:
+		---------------------------------
+			ostream s used to create a an output stream and istream is use to create an input stream.
+
+			ifstream <object-name>("<filename>");
+			<object-name> >> name;
+
+			ofstream <object-name>("<filename>");
+			<object-name> << "shubham";
+
+			to close a stream object we need to use <object>.close();
+
+		Opening a file using open():
+		----------------------------
+
+			ofstream <obj-name>;
+			<object-name>.open("<filename>");
+
+			Always close the reading or writing object before opening other.
+			Witout mentioning mode you cant write and read a file at same time.
+
+			to read complete file use eof()
+
+		File Modes:
+		----------
+			ios::in						read only
+			ios::out					write nly
+			ios::app					append at end of file
+			ios::ate					goto end of file at opening
+			ios::binary					binary file
+			ios::trunc					delete content if file exists
+			ios::nocreate				open fails if file does not exist
+			ios::noreplace				open fails if file already exist
+
+
+			by default ios::out is with ios::trunc
+			ios::app allows to add at end and ios::ate allows to add at end write anywhere
+			you can add one or mode modes using the | operator
+			to to read and write a same time create object of fstream
+
+			to set pointer again to file begining after reaching end of file.
+			we need to make it clear(); 
+
+			seekg()	 moves input pointer
+			seekp()		moves output pointer
+			tellg()		current psition of get
+			teelp()		current position of put
+
+
+	
+	Standard Template Library :
+	---------------------------
+		Can be divided into containers and algorithms.
+
+		Simple Containers : 
+			Pair : pint in 2d
+			vector : dynamic sized array
+			forward_list : single linked list
+			list : dobl linked list
+		Container adapter :	on top of simple containers
+			stack
+			queue
+			priority queue:
+		Associative :
+			set :  single key item
+			map : collection of key value pairs
+			unordered set : 
+			unordered map
+			
+		Iterators use the address of item for our use.
+			there are like pointers but only in some cases. As a forward list iterator can ony move in one direction that too ne by one but an vector iterator can have random access.
+
+		Vector : 	#include<vector>	include header
+					vector <int> v;		declare the vector
+					v.push_back(1);		push element
+					v.push_back(2);		push element
+					v.size();	get size
+					v[i]	get element --- doesnot do array inde out of bound
+					use v.at(i) deos out of bound
+
+			better way to access a vector
+			for (auto x:v){
+				cout << x;
+			}
+
+			also string: string str;
+			for(char x:str){
+				cout << x;
+			}
+
+			we can use &x as refrence and edit the vector content.
+
+				vector <int> v;
+				vector <int> v(10,5);		vector of size 10 each value is 5.
+				vector <int> v{10,20,30,40,50} 		vector initialised using list
+
+			to find max in vector:
+			int res = *max_element(v.begin(),v.end());
+
+			To modify the vector elements using for each loop:
+			vector <int> v {10,20,30};
+			for(auto x:v){			// this will not modify the value.
+				x+=1;
+			}
+			Use refernece : for(auto &x:v){ 		// to avoid copy of bit struct and class
+
+			to avoid modification in loop use cost auto &x
+
+			We can create vector from array of size n. By,
+			vector<type> v(arr, arr+n);
+
+			we can traverse the vector from reverse using rbegin an rend.
+
+			begin(), end() return address but takes no argument
+			next(i), prev(i) returns address of next and previous takes an adress as input. next(i+x) and prev(i+x) return x th elemet from i.
+			advance(i,x); sets adress to x positions from i
+
+			pop_back() : removes last element
+			front() : give v[0]
+			back() : give last element.
+			insert(pos,value) :
+			insert(pos, times, value) : inserts value at pos n times
+			erase(pos) : erase value at pos.
+			erase(pos1,pos2): deletes fro pos1 to pos2
+			empty() : cheks if empty
+			clear() :  clears vector
+			resize(val) : you can make small or big 
+
+		Iterators and Containers:
+
+			Forward list		forward
+			list				bidirection
+			vecotr 				random
+
+			set				bidirection
+			map 
+			multimap
+			multiset
+
+			unordered map	forward
+			unordered set
+			
+			stack 
+			queue
+			priority queue
+
+		Pair : it is a piar of two value that can be of same type or different type.
+		 (int,int) (double,double) (int, string)
+
+		 #include<utility>
+
+		 pair<int,int> p(10,20);
+		 pair(int,string) p1(10,"shubham");
+
+		 first and second is used to access air elements.
+
+		 p.first and p.second;
+
+		 	comaparision operator on pairs:
+			-------------------------------
+				(p1 == p2) compares both values should be same
+				(p1 != p2)
+				(p1 > p2)	compares only first 
+				(p1 < p2)	compares oly first
+
+		
+		Forward list : Singly Linked List
+		----------------------------------
+			#include<forward_list>		// to use forward list include this
+			forward_list<int> l = {10,20,30}		create a list.
+			l.push_front(5)		// pushes 5 in front
+			l.pop_front()		// pops front element
+			l.assign({10,21,31})		//assigns a new set of values to th list.
+			l.remove(10)		// removes all instamces of value
+			l.begin()
+			l.end()	
+
+			assign values of one list to other
+			l2.assign(l1.begin(),l1.end())
+			assign value n times
+			l.assign(n,value)
+
+			l.insert_after(l.begin(),10)
+			l.insert_after(l.begin(),{11,12,13})
+			l.emplace_after(l.begin(),10)		// doesnot copies consturctor
+			l.erase_after(l.begin())  // removes vlaue and return pointer after deletion
+			l.erase_after(l.begin(), l.end())
+			
+			l.clear()
+			l.empty()
+			l.reverse()
+			l1.merge(l2)		// inserts using sort
+			l.sort()
+
+		List : Doubly linked list having head and tail pointer.
+		------------------------------------------------
+
+			#include<list>		//include to use list library
+			list <int> l {2,3,4};
+			l.push_back(10);
+			l.push_front(5);
+			l.pop_back();
+			l.pop_front();
+			l.insert(itr,5);
+			l.insert(it,2,7);	// 7, 2times
+			l.front();
+			l.back();
+			l.size();
+			l.erase(it);
+			l.remove(5);	//removes all occurance
+			l1.merge(l2);	
+			l1.unique()		//removes consecutive repeated values
+
+		
+		Dequeue : Stack + queue			// insert and delete from both ends
+		// circular array
+		--------------------------
+			#include<deque>
+			deque<int> dq {10,20,30};
+			dq.push_front(5);
+			dq.push_back(40);
+			dq.front();
+			dq.back();
+			dq.size();
+			dq.pop_front();
+			dq.pop_back();
+			deq.begin();
+			dq.insert(dq.begin(),0);
+			dq.erase(it);
+
+		Container adapter: 
+		Stack : 	LIFO
+		-----------------
+			#include<stack>
+			stack<int> s;
+			s.push(0);
+			s.push(10);
+			s.push(20);
+			s.size();
+			s.top();
+			s.pop();
+			s.empty();
+
+			Stack can be implemented by any whch provides
+			back(),size(),push_back(),pop_back(), empty()
+
+		Queue : FIFO	:
+		--------------
+
+			#include<queue>
+			queue<int>	q;
+			q.push(10);
+			q.push(20);
+			q.front();
+			q.back();
+			q.size();
+			q.empty();
+			q.pop();
+			Queue can be implemented by any whch provides
+			back(),size(),push_back(),pop_front(), empty()
+
+		Priority Queue : 	//using heap data structure
+		-----------------------------------------------
+
+			#include<queue>
+
+			priority_queue <int>	pq;			//max heap
+			pq.push(10);
+			pq.push(5);
+			pq.push(6);
+			pq.size();
+			pq.top();
+			pq.empty();
+			pq.pop();		// gives current max
+
+
+			priority queue for min heap.
+			priority_queue<int, vector<int>, greater<int>> pq;
+
+			priority queue using array.
+			priority_queue<int> pq(arr,arr+3)
+
+
+		Set : 
+		------
+			#include<set>
+			set <int> s;		// gives items in increasing order
+			set <int, greater<int>> s;		//gives items in decreasing order
+			s.insert(10);
+			s.insert(5);
+			s.insert(20);
+
+			Inserting a dulicate value, it ignores duplicates
+			s.find(5);		// if present then return iterator ortherwise returns end
+			s.clear();
+			s.count(); 		// return 1 or 0 if present or not present.
+			s.erase(value);
+			s.erase(itrator);
+			s.erase(itr,itr);
+			s.lower_bound(5);		//returns iterator if present otherwise return itr to element just greater than value
+			s.upper_bound();		
+
+			Set built on Red black tree
+
+		MultiSet :		Data is sorted but allows duplicates
+		-------------
+			multiset <int> ms;
+
+			ms.insert(10);
+			ms.erase(10);		removes all instances of 10
+			ms.count(10);		returns count
+			m.lower_bound(10);		returs first 
+			m.upper_bound(10); 		skips all of equal value 
+			m.equal_range(20); 		returns a pair of (lower_bound,upper_bound)	
+
+		Map :	Have a key,value pair, ordered according to keys.
+		-----
+			#include<map>
+			map<int, int> m;
+			m.insert({10,20});
+			m[15] = 30;		// not recommended
+
+			traverse using first and second
+			repeated key insertion are ignored
+
+			m.at(10) = 300;		//to update value
+			m.begin()
+			m.end()
+			m.clear()
+			m.size()
+			m.empty()
+			m.find(5)	// searched key and returns iterator
+			m.count(2)	// returns 1 or 0
+			m.lower_bound()
+			m.upper_bound()
+			m.erase(5)		//removes key
+			m.erase(m.find(5))
+			m.erase(m.find(2),m.end())
+			
+			made by Red Black Tree.
+		
+		MultiMap : 		allows multiple keys
+		------------------------------------
+
+			m.insert({10,20});
+			m.insert({10,30});	// allows repition
+
+			cannot use [] to find value
+			m.count(10)	//retuns count
+			m.erase(10)	//returns all instances
+			m.lower_bound(20)
+			m.upper_bound(20)
+			m.equal_range(20)		//returns a  pair
+
+
+		Unordered set :		Uses hashing and there is no order
+		----------------
+			#include<unordered_set>
+			unordered_set <int> s;
+			s.insert(0);
+			s.insert(10);
+			s.insert(20);
+			s.begin();
+			s.end();
+			s.find(10);
+			s.clear();
+			s.size();
+			s.erase(it)
+			s.erase(value);
+			s.erase(it,it);
+
+		Unordered Map:		based on hashing and it is not in order
+		------------------------------------
+			#include<unordered_map>
+
+			unordered_map <int,int> m;
+			m.insert({10,20});
+			m.find(10);
+			m.begin();
+			m.end();
+			m.count();
+			m.erase();
+			m.size();
+
+
+	algorithms:
+
+		Non-modifying sequence operation:
+		---------------------------------
+
+			*	all_of(first,last,predicate)	-- returns true if all elements returns true in predicate
+			*	any_of(first,last,predicate)
+				none_of(first,last,predicate)
+				for_each(first,last,function) : applies function to each element
+			*	find(first,last,value)	: returns iterator to first match value
+			*	find_if(first,last,value) :  returns first iterator for which predicate returns true
+				find_end(first,last,first,last,<optional funct>) :  find matching last subsquenece.
+				find_first_of(first,last,first,last,<optional funct>) : finds first matchig element retnr itr.
+			*	count(first,last,value);
+			*	count_if(first,last,funct);
+				mismatch(first,last,first,<optional funct>);	first mismatch value between two ranges returns pair
+			*	equal(first,last,fisrt); return true if both ranges equl
+			*	is_permutation(first, last, first, pred); 	true if both are equal in any order.
+			*	search(first, last, first, last);
+				search_n(first,last, count, val);	search for vlaue consicutive count times.
+
+		Modifying sequence operation:
+		-----------------------------
+
+			*	copy(first,last,desfirst);
+				copy_n(first,n.first);
+				copy_if(first,last,desfirst,pred)
+				copy_backward(fisrt,last,destend);
+			*	move(first,last,first);
+			*	swap(a,b);	swaps two values
+			*	swap_ranges(first,last,first)
+			*	iter_swap(a,b)
+			*	transform(first,last,first,funct)
+			* 	replace(first,end,old,new)
+			*	replace_copy(first,last,first,old,new)		copies element with relaced new value
+			*	replace_copy_if(first,last,first,funt,new)		if funct reurns true then only replace
+				fill(first,last,val)
+				fill_n(first,times,val)
+				generate(first,last,funct)
+			*	remove(first,last,val)
+			*	remove_if(first,last,funct)
+			*	remove_copy(first,last_first,val)
+				unique(first,last)		removes consecutive repeat
+				unique_copy(first,last,first)
+				rotate(first,new_first,last)
+				rotate_copy(first,new_first,last,first)
+
+		Partition :
+		-------------
+				partition (myvector.begin(), myvector.end(), IsOdd);				not relative ordering
+			*	stable_partition (myvector.begin(), myvector.end(), IsOdd);			maintain relative ordering
+				partition_copy (foo.begin(), foo.end(), odd.begin(), even.begin(), IsOdd);
+			*	partition_point(foo.begin(),foo.end(),IsOdd);						for partitioned ranges only
+			*	is_partitioned(foo.begin(),foo.end(),IsOdd)
+			
+		Sorting :
+		---------
+				sort (myvector.begin(), myvector.begin()+4);
+				sort (myvector.begin()+4, myvector.end(), myfunction);		takes two arguments 
+				is_sorted(foo.begin(),foo.end())
+				is_sorted_until(foo.begin(),foo.end())					returns it to first unsorted element
+
+		Binary Search :		Sorted values
+		---------------
+				lower_bound (v.begin(), v.end(), 20);		returns iterator to first values which are not less than val
+				upper_bound (v.begin(), v.end(), 20);		returns iteratr to first value which is greater than val
+				binary_search (v.begin(), v.end(), 3)		returns true or false
+
+		Min/Max :
+		----------
+				minmax({1,2,3,4,5})			returns a pair with smallest as first and largest as second
+				min_element(myints,myints+7)
+				max_element(myints,myints+7)
+				minmax_element (foo.begin(),foo.end())		returns iterator to pair
+
+
+	
+	Container
+
+		Vector:
+		-------
+				iterator :  begin,end, rbegin, rend, cbegin, cend, crbegin, crend
+				capacity : size, max_size, empty, resize, shrink_to_fit, capacity, reserve
+				element	 : front, back, [], at
+				modify	:	assign, emplace, insert, erase, push_back, pop_back, clear, swap.
+
+		forward_list :	(Singly linked list)	cannot iterate backward and access directly
+		-------------
+
+					

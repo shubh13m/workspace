@@ -1,0 +1,62 @@
+Imp algo funct http://www.cplusplus.com/reference/algorithm/
+
+    Non-modifying algo
+
+        all_of(v.begin(),v.end(),[](int i) {return i%2;})
+        any_of
+        for_each(v.begin(),v.end(),myfunc);     // applies function to each element myfunc(int x){return x+1;}
+        find(v.begin(),v.end(),value)   // returns itr to 1st match
+        find_if() // returns itr for value which returns true
+        count(first,last,value)
+        count_if(first,last,myfuc)      // make count i return is true
+        equal(first,last,first1)        // check whether two sequences are equal or not
+        search(first,last,first,last)   //  search for subsequence.
+        search(first,last,times,value)  // seach for value times time,
+
+    modifying algo
+
+        copy(first,last,desfirst)
+        copy_n(first,n,desfirst);
+        copy_if(first,last,desfirst,fun);
+        move(first,last,first)
+        swap(a,b)
+        iter_swap(a,b)
+        replace(first,last,old,new)
+        replace_copy(first,last,first,old,new)      copy to des and replace old with new
+        fill(first,last,val)
+        remove(first,last,val)
+        remove_if(first,last,fun)
+        remove_copy(first,last,first,val)
+
+    Partition
+       partition(first,last,fun)
+
+    Sort
+        sort(first,last)
+        sort(first,last,funct)
+        is_sorted(first,last)
+        is_sorted_until(first,last)
+
+    Binary Search
+        lower_bound(first,last,value)
+        upper_bound(first,last,value)
+        binary_search(first,last,value)
+
+    Min/Max
+        minmax{values}          returns a pair with first as min and second as max
+        min_element(first,last)
+        max_element(first,last)
+        minmax_element(first,last)
+
+
+-------------------------------------
+
+    Pair : 
+        pair<int,int> p = make_pair(x,y);
+        p.first , p.second;
+    Vector :    vectorContainer.cpp
+		iterator :  begin,end, rbegin, rend, cbegin, cend, crbegin, crend
+        capacity : size, max_size, empty, resize, shrink_to_fit, capacity, reserve
+        element	 : front, back, [], at
+        modify	:	assign, emplace, insert, erase, push_back, pop_back, clear, swap.
+

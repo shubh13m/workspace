@@ -1,0 +1,43 @@
+In a simple switch archietecture
+A plane is a group of algorithms.
+Data Plane : How to process a packet ? 
+Control Plane : How to use information to fill routing table.
+They both interact with each other.
+
+Background Study NIC 
+NIC card (Network Interface Card) circuit board installed in a computer that provides a dedicated network connection. It is component without which a computer cannot be connected over a network.
+The software that controls the planes is often called a Network Operating System (NOS).
+Data Plane algorithms were rigid and cannot be maipulated.
+To make packet processing faster it was kept as hardware restricted.
+If we want to change the way packet is processed we need to go to the vendor of hardware and those people will change the packet processing and that may take 3-4 months
+
+SmartNIC
+Smart NIC offers reprogrammable data plane and offloads packet processing burden with server CPUs. thus increases performance. It is as fast as processing it on CPU. Helps in renting out more cores.
+Need for P4 and Advantages.
+
+P4 Language
+Distributed as Open Source and Developed in  2013 by P4 Laguage Consortium.
+Programming Protocol-Independent Packet Processors is a programming language for controlling packet forwarding planes in networking devices, such as routers and switches
+In a traditional switch the manufacturer defines the data-plane functionality.
+A P4-programmable switch differs from a traditional switch. The data plane functionality is not fixed in advance but is defined by the a P4 program
+
+Figure of Programming a data plane with P4 
+The P4 compiler generates the API that the control plane uses to communicate with the data plane.
+
+Core abstraction provided by P4 Language.
+Header
+Parser
+Table
+Action
+Match Action
+
+Figure of P4 COmpiler data flow
+
+Validation of P4 tools
+Figure Programmable vlock of switch 
+
+Result
+Future work
+
+
+
