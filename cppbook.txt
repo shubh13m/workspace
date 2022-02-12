@@ -659,17 +659,40 @@ Inheritance :
 			map : collection of key value pairs
 			unordered set : 
 			unordered map
-			
-		Iterators use the address of item for our use.
-			there are like pointers but only in some cases. As a forward list iterator can ony move in one direction that too ne by one but an vector iterator can have random access.
 
-		Vector : 	#include<vector>	include header
-					vector <int> v;		declare the vector
-					v.push_back(1);		push element
-					v.push_back(2);		push element
-					v.size();	get size
-					v[i]	get element --- doesnot do array inde out of bound
-					use v.at(i) deos out of bound
+		Pair : 
+		-------
+			It is a piar of two value that can be of same type or different type.
+			(int,int) (double,double) (int, string)
+
+			#include<utility>
+
+			pair<int,int> p(10,20);
+			pair(int,string) p1(10,"shubham");
+			PAIR3 = make_pair ("GeeksForGeeks is Best",4.56);
+
+			first and second is used to access air elements.
+
+			p.first and p.second;
+
+				comaparision operator on pairs:
+				-------------------------------
+					(p1 == p2) compares both values should be same
+					(p1 != p2)
+					(p1 > p2)	compares only first 
+					(p1 < p2)	compares oly first
+
+			pair1.swap(pair2); swap first and second of the pair.
+
+		Vector :
+		--------
+			#include<vector>	include header
+			vector <int> v;		declare the vector
+			v.push_back(1);		push element
+			v.push_back(2);		push element
+			v.size();	get size
+			v[i]	get element --- doesnot do array inde out of bound
+			use v.at(i) deos out of bound
 
 			better way to access a vector
 			for (auto x:v){
@@ -681,14 +704,12 @@ Inheritance :
 				cout << x;
 			}
 
-			we can use &x as refrence and edit the vector content.
-
-				vector <int> v;
-				vector <int> v(10,5);		vector of size 10 each value is 5.
-				vector <int> v{10,20,30,40,50} 		vector initialised using list
-
-			to find max in vector:
-			int res = *max_element(v.begin(),v.end());
+			vector <int> v;
+			vector <int> v(10,5);		vector of size 10 each value is 5.
+			vector <int> v{10,20,30,40,50} 		vector initialised using list
+			
+			We can create vector from array of size n. By,
+			vector<type> v(arr, arr+n);
 
 			To modify the vector elements using for each loop:
 			vector <int> v {10,20,30};
@@ -696,67 +717,16 @@ Inheritance :
 				x+=1;
 			}
 			Use refernece : for(auto &x:v){ 		// to avoid copy of bit struct and class
+			to avoid modification in loop use const auto &x
 
-			to avoid modification in loop use cost auto &x
-
-			We can create vector from array of size n. By,
-			vector<type> v(arr, arr+n);
-
-			we can traverse the vector from reverse using rbegin an rend.
-
-			begin(), end() return address but takes no argument
 			next(i), prev(i) returns address of next and previous takes an adress as input. next(i+x) and prev(i+x) return x th elemet from i.
-			advance(i,x); sets adress to x positions from i
 
-			pop_back() : removes last element
-			front() : give v[0]
-			back() : give last element.
-			insert(pos,value) :
-			insert(pos, times, value) : inserts value at pos n times
-			erase(pos) : erase value at pos.
-			erase(pos1,pos2): deletes fro pos1 to pos2
-			empty() : cheks if empty
-			clear() :  clears vector
-			resize(val) : you can make small or big 
+			iterator :  begin,end, rbegin, rend, cbegin, cend, crbegin, crend
+			capacity : size, max_size, empty, resize, shrink_to_fit, capacity, reserve
+			element	 : front, back, [], at
+			modify	:	assign, emplace, insert, erase, push_back, pop_back, clear, swap.
 
-		Iterators and Containers:
 
-			Forward list		forward
-			list				bidirection
-			vecotr 				random
-
-			set				bidirection
-			map 
-			multimap
-			multiset
-
-			unordered map	forward
-			unordered set
-			
-			stack 
-			queue
-			priority queue
-
-		Pair : it is a piar of two value that can be of same type or different type.
-		 (int,int) (double,double) (int, string)
-
-		 #include<utility>
-
-		 pair<int,int> p(10,20);
-		 pair(int,string) p1(10,"shubham");
-
-		 first and second is used to access air elements.
-
-		 p.first and p.second;
-
-		 	comaparision operator on pairs:
-			-------------------------------
-				(p1 == p2) compares both values should be same
-				(p1 != p2)
-				(p1 > p2)	compares only first 
-				(p1 < p2)	compares oly first
-
-		
 		Forward list : Singly Linked List
 		----------------------------------
 			#include<forward_list>		// to use forward list include this
@@ -1051,18 +1021,6 @@ Inheritance :
 				max_element(myints,myints+7)
 				minmax_element (foo.begin(),foo.end())		returns iterator to pair
 
-
-	
-	Container
-
-		Vector:
-		-------
-				iterator :  begin,end, rbegin, rend, cbegin, cend, crbegin, crend
-				capacity : size, max_size, empty, resize, shrink_to_fit, capacity, reserve
-				element	 : front, back, [], at
-				modify	:	assign, emplace, insert, erase, push_back, pop_back, clear, swap.
-
-		forward_list :	(Singly linked list)	cannot iterate backward and access directly
 		-------------
 
 					
