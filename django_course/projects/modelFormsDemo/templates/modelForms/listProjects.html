@@ -1,0 +1,21 @@
+
+<body>
+    {% if project %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>AssignedTo</th>
+            <th>Priority</th>
+        </thead>
+        {% for p in project%}
+        <tr>
+            <td>{{p.name}}</td>
+            <td>{{p.startDate}}</td>
+            <td>{{p.endDate}}</td>
+            <td>{{p.assignedTo}}</td>
+            <td>{{p.priority}}</td>
+        </tr>
+    </table>
+</body>
