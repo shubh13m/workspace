@@ -24,6 +24,7 @@ New Operator:
 			}
 
 	Always deallocate memory created by new.
+	delete [] name_of_pointer;
 	Unless a try and throw is not used if memory is not allocated then NULL pointer is returned or bad_alloc exception is thrown
 
 Delete :
