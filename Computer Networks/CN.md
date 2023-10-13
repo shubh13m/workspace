@@ -149,3 +149,15 @@ Peers are not owned by service provider but a laptop, PC, smartphone. Bittorrent
 * Why TCP needs two sockets and Udp only one socket
 
   * TCP requires two sockets because it establishes a dedicated, bi-directional communication channel between two endpoints, while UDP only requires one socket because it does not establish such a dedicated channel. The choice of TCP or UDP depends on the specific requirements of the application, such as the level of reliability and order of delivery needed for the data.
+
+## Transport Layer
+
+Transport layer protocols are implemented in the end systems not in network router. Breaks app. layer msg into chunks, adds tranport layer header to each and calls them segment.
+Transport layers provided communication between two processes running on different hosts.
+TCP : Transmission control protocol, reliable, connection-oriented, congestion-control.
+UDP : User datagram protocol, unreliable, connectionless, unregulated.
+
+
+Multiplexing and demultiplexing allow multiple data streams from different applications on Device A to be combined into a single communication channel for transmission and then separated and delivered to the correct applications on Device B based on their respective destination ports.
+
+tuple for socket : <src_ip, src_port, dst_ip, dst_port>
