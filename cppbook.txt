@@ -373,8 +373,8 @@ Inheritance :
 
 		Constructor of virtual base class are invokded first then non-virtual base class constructor.
 
-		Pointer :
-		----------
+Pointer :
+----------
 
 			pointers store the memory address of some other variables and the return the values stored in those variables.
 			

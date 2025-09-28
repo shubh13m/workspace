@@ -1,0 +1,64 @@
+Programming language with LLVM : Youtube videos and Udemy course.  --  42k views
+    https://www.youtube.com/watch?v=Lvc8qx8ukOI&list=PLGNbPb3dQJ_5Dv45KhMlt9HMSlnfMyb2V&index=1
+    https://www.udemy.com/course/programming-language-with-llvm/#main-content-anchor
+
+Let's Create a Compiler   : 576k views - 6 vid
+    https://www.youtube.com/watch?v=vcSijrRsrY0
+
+LLVM IR Tutorial  -- 4 videos   --- 176 views
+    https://www.youtube.com/watch?v=AGFEjnS43x4
+
+
+
+
+LLVM - 28k views -- 25 videos
+    https://www.youtube.com/watch?v=HecW5byOrUY&t=21s
+
+
+
+
+
+How LLVM & Clang work : 59k views
+    https://www.youtube.com/watch?v=IR_L1xf4PrU&t=5s
+
+Compilers, How They Work, And Writing Them From Scratch
+    https://www.youtube.com/watch?v=QdnxjYj1pS0
+
+
+
+
+Writing a compiler with LLVM
+    https://www.youtube.com/watch?v=vrRXIQDCCEk&t=450s
+
+Building Your Own Compiler The Slightly Easier Way With LLVM 
+    https://www.youtube.com/watch?v=_XbOTRunqHk
+
+
+
+LLVM: A Modern, Open C++ Toolchain
+    https://www.youtube.com/watch?v=uZI_Qla4pNA&t=3s
+
+Starting LLVM Development in Visual Studio on Windows
+    https://www.youtube.com/watch?v=n6Z6rG-asfs
+
+
+
+
+
+Advanced Topics: LLVM Compiler Passes
+    https://www.youtube.com/watch?v=XK9xG4IGBeU&t=18s
+
+Writing an LLVM Optimization
+    https://www.youtube.com/watch?v=MagR2KY8MQI&t=174s
+
+How to build a compiler with LLVM and MLIR
+    https://www.youtube.com/watch?v=Ij4LswX1tZU&list=PLlONLmJCfHTo9WYfsoQvwjsa5ZB6hjOG5
+
+"TVM: An End to End Deep Learning Compiler Stack" 
+    https://www.youtube.com/watch?v=JmWWAnHBDx0
+
+
+
+
+
+

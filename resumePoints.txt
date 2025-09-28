@@ -1,0 +1,10 @@
+P4 langauge details.
+P4 compiler usage: Usecasea and programs.
+Testplan and Testcase creation: Validation scope and scripts. Commits.
+Maintain quality reviews and bug scrubs: Validation and Bugs. 
+Manage release activities: Validation, Regressions and reports analysis.
+Security related activities: scans, code coverage, negative tests and proper errors.
+
+
+
+

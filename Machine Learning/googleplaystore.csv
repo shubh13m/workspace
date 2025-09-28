@@ -1,0 +1,111 @@
+App,Category,Rating,Reviews,Size,Installs,Type,Proce,Content Rating,Genre,Last Updated,Current Version,Android Version
+App1,Lifestyle,3.8,2168.0,64M,"500,000+",Free,4.99,Mature 17+,Social,"February 15, 2023",1.0.0,7.1 and up
+App2,Entertainment,3.0,3804.0,90M,"1000,000+",Paid,4.99,Teen,Health & Fitness,"January 1, 2023",4.5.2,4.1 and up
+App3,Lifestyle,4.4,639.0,9M,"1,000+",Free,0,Teen,Action,"May 5, 2023",5.3.3,4.1 and up
+App4,Social,4.9,3658.0,26M,"5,000+",Free,2.99,Everyone,Action,"January 1, 2023",7.0.0,5.0 and up
+App5,Health,4.8,3721.0,57M,"10,000+",Free,0,Teen,Tools,"January 1, 2023",4.5.2,4.1 and up
+App6,Entertainment,4.2,2652.0,14M,"10,000+",Free,0,Teen,Social,"April 20, 2023",6.1.1,6.0 and up
+App7,Health,3.6,1101.0,14M,"50,000+",Paid,1.99,Everyone,Education,"May 5, 2023",6.1.1,4.0 and up
+App8,Health,3.4,2419.0,7M,"10,000+",Paid,0,Teen,Social,"January 1, 2023",3.0.1,6.0 and up
+App9,Lifestyle,4.6,3948.0,21M,"10,000+",Paid,0,Everyone,Education,"February 15, 2023",5.3.3,9.0 and up
+App10,Health,4.0,3288.0,51M,"5,000+",Paid,3.49,Mature 17+,Education,"February 15, 2023",4.5.2,6.0 and up
+App11,Productivity,4.4,1878.0,49M,"5,000+",Free,0,Mature 17+,Entertainment,"January 1, 2023",6.1.1,6.0 and up
+App12,Lifestyle,3.0,3291.0,85M,"500,000+",Paid,0,Mature 17+,Health & Fitness,"May 5, 2023",3.0.1,5.0 and up
+App13,Education,4.9,595.0,13M,"1000,000+",Free,3.49,Mature 17+,Entertainment,"January 1, 2023",2.1.0,4.0 and up
+App14,Game,3.4,2738.0,19M,"100,000+",Free,0,Teen,Entertainment,"February 15, 2023",6.1.1,4.0 and up
+App15,Lifestyle,4.5,2776.0,41M,"5,000+",Paid,0,Mature 17+,Health & Fitness,"February 15, 2023",6.1.1,7.1 and up
+App16,Tools,3.0,4362.0,62M,"1,000+",Free,4.99,Teen,Tools,"March 10, 2023",5.3.3,9.0 and up
+App17,Entertainment,4.6,1727.0,80M,"100,000+",Free,0,Teen,Social,"April 20, 2023",6.1.1,8.0 and up
+App18,Health,4.6,2603.0,75M,"10,000+",Paid,3.49,Mature 17+,Productivity,"March 10, 2023",7.0.0,4.1 and up
+App19,Health,4.0,3934.0,41M,"50,000+",Paid,0,Mature 17+,Productivity,"April 20, 2023",5.3.3,7.1 and up
+App20,Health,3.5,2736.0,84M,"50,000+",Paid,0,Mature 17+,Education,"May 5, 2023",1.0.0,8.0 and up
+App21,Social,3.0,4762.0,9M,"500,000+",Paid,3.49,Teen,Education,"March 10, 2023",5.3.3,8.0 and up
+App22,Education,3.5,2461.0,35M,"5,000+",Free,0,Teen,Lifestyle,"February 15, 2023",6.1.1,4.0 and up
+App23,Game,3.8,745.0,50M,"1000,000+",Paid,3.49,Everyone,Lifestyle,"March 10, 2023",6.1.1,4.0 and up
+App24,Entertainment,4.2,1250.0,7M,"1000,000+",Free,0,Teen,Entertainment,"May 5, 2023",1.0.0,5.0 and up
+App25,Education,3.2,1702.0,31M,"10,000+",Free,0,Everyone,Social,"April 20, 2023",3.0.1,6.0 and up
+App26,Health,4.2,1055.0,12M,"5000,000+",Free,4.99,Everyone,Health & Fitness,"February 15, 2023",3.0.1,5.0 and up
+App27,Health,3.6,111.0,10M,"500,000+",Paid,0,Everyone,Productivity,"February 15, 2023",3.0.1,8.0 and up
+App28,Finance,3.4,4958.0,57M,"100,000+",Free,3.49,Mature 17+,Productivity,"February 15, 2023",4.5.2,6.0 and up
+App29,Lifestyle,3.7,662.0,42M,"1,000+",Free,0,Teen,Action,"April 20, 2023",4.5.2,5.0 and up
+App30,Health,4.4,1667.0,58M,"5,000+",Paid,0,Mature 17+,Social,"February 15, 2023",6.1.1,4.1 and up
+App31,Tools,3.0,568.0,49M,"500,000+",Free,0,Teen,Health & Fitness,"March 10, 2023",5.3.3,6.0 and up
+App32,Finance,3.9,3710.0,35M,"500,000+",Paid,0,Mature 17+,Social,"February 15, 2023",2.1.0,4.1 and up
+App33,Game,4.7,2962.0,36M,"1000,000+",Free,1.99,Teen,Education,"February 15, 2023",1.0.0,5.0 and up
+App34,Education,4.9,4910.0,16M,"5000,000+",Free,3.49,Everyone,Social,"January 1, 2023",4.5.2,8.0 and up
+App35,Game,3.6,4090.0,14M,"1000,000+",Paid,0,Mature 17+,Social,"February 15, 2023",7.0.0,4.1 and up
+App36,Education,5.0,2599.0,97M,"1000,000+",Paid,0,Everyone,Entertainment,"March 10, 2023",3.0.1,4.0 and up
+App37,Lifestyle,3.6,2091.0,22M,"500,000+",Paid,0,Mature 17+,Lifestyle,"January 1, 2023",4.5.2,9.0 and up
+App38,Lifestyle,3.7,1502.0,74M,"50,000+",Free,0,Mature 17+,Finance,"April 20, 2023",6.1.1,4.0 and up
+App39,Social,4.5,2741.0,23M,"5,000+",Free,0,Mature 17+,Lifestyle,"February 15, 2023",5.3.3,5.0 and up
+App40,Lifestyle,3.8,576.0,37M,"1000,000+",Free,0,Everyone,Health & Fitness,"January 1, 2023",3.0.1,4.1 and up
+App41,Tools,4.7,4637.0,41M,"100,000+",Free,1.99,Teen,Finance,"May 5, 2023",1.0.0,7.1 and up
+App42,Entertainment,3.5,471.0,67M,"50,000+",Paid,0,Teen,Action,"April 20, 2023",4.5.2,6.0 and up
+App43,Finance,5.0,4553.0,75M,"5000,000+",Paid,0,Mature 17+,Education,"May 5, 2023",7.0.0,6.0 and up
+App44,Entertainment,3.3,1489.0,94M,"5,000+",Paid,1.99,Teen,Education,"March 10, 2023",4.5.2,4.1 and up
+App45,Education,4.3,3514.0,37M,"5,000+",Paid,0,Teen,Productivity,"January 1, 2023",5.3.3,4.1 and up
+App46,Game,4.2,747.0,84M,"10,000+",Free,0,Mature 17+,Social,"April 20, 2023",1.0.0,7.1 and up
+App47,Productivity,4.9,203.0,73M,"5,000+",Paid,0,Teen,Productivity,"April 20, 2023",7.0.0,7.1 and up
+App48,Education,4.0,473.0,41M,"100,000+",Free,0,Everyone,Social,"March 10, 2023",1.0.0,5.0 and up
+App49,Productivity,3.8,4430.0,70M,"1,000+",Paid,0,Teen,Entertainment,"January 1, 2023",3.0.1,6.0 and up
+App50,Lifestyle,4.7,2773.0,27M,"10,000+",Paid,0,Teen,Tools,"April 20, 2023",7.0.0,5.0 and up
+App51,Education,3.3,3474.0,73M,"500,000+",Paid,3.49,Mature 17+,Tools,"May 5, 2023",2.1.0,7.1 and up
+App52,Finance,3.2,1306.0,11M,"5,000+",Free,0,Everyone,Social,"January 1, 2023",6.1.1,4.0 and up
+App53,Social,3.7,3219.0,87M,"5,000+",Paid,0,Everyone,Productivity,"March 10, 2023",7.0.0,6.0 and up
+App54,Game,4.0,3434.0,47M,"50,000+",Paid,0,Mature 17+,Tools,"March 10, 2023",1.0.0,8.0 and up
+App55,Game,4.0,2621.0,41M,"10,000+",Free,3.49,Mature 17+,Productivity,"March 10, 2023",5.3.3,6.0 and up
+App56,Entertainment,4.7,486.0,32M,"1,000+",Free,3.49,Teen,Action,"February 15, 2023",6.1.1,8.0 and up
+App57,Lifestyle,4.4,2554.0,81M,"500,000+",Paid,3.49,Everyone,Tools,"May 5, 2023",2.1.0,7.1 and up
+App58,Education,4.1,3427.0,47M,"100,000+",Paid,0,Mature 17+,Finance,"April 20, 2023",7.0.0,8.0 and up
+App59,Health,3.3,3262.0,14M,"1000,000+",Free,4.99,Teen,Productivity,"February 15, 2023",1.0.0,9.0 and up
+App60,Education,4.8,4815.0,66M,"5000,000+",Paid,0,Teen,Lifestyle,"February 15, 2023",3.0.1,9.0 and up
+App61,Social,4.7,423.0,57M,"5,000+",Free,2.99,Mature 17+,Health & Fitness,"January 1, 2023",5.3.3,7.1 and up
+App62,Entertainment,4.6,1147.0,31M,"5,000+",Paid,3.49,Teen,Social,"January 1, 2023",5.3.3,4.1 and up
+App63,Social,4.2,2576.0,51M,"500,000+",Paid,4.99,Teen,Education,"April 20, 2023",4.5.2,4.0 and up
+App64,Game,5.0,4379.0,58M,"1000,000+",Free,2.99,Teen,Productivity,"April 20, 2023",6.1.1,4.0 and up
+App65,Education,4.9,544.0,62M,"10000,000+",Paid,0,Everyone,Education,"May 5, 2023",2.1.0,7.1 and up
+App66,Entertainment,3.9,1961.0,75M,"100,000+",Paid,1.99,Everyone,Education,"April 20, 2023",3.0.1,4.0 and up
+App67,Game,3.4,2330.0,93M,"500,000+",Free,0,Everyone,Health & Fitness,"May 5, 2023",7.0.0,4.0 and up
+App68,Entertainment,4.4,4628.0,33M,"1,000+",Free,0,Everyone,Tools,"February 15, 2023",1.0.0,5.0 and up
+App69,Finance,3.6,3037.0,85M,"1,000+",Paid,3.49,Mature 17+,Health & Fitness,"May 5, 2023",5.3.3,4.0 and up
+App70,Productivity,4.1,1581.0,6M,"10,000+",Paid,0,Mature 17+,Finance,"February 15, 2023",2.1.0,9.0 and up
+App71,Lifestyle,3.4,2505.0,34M,"5,000+",Free,0,Mature 17+,Social,"January 1, 2023",6.1.1,9.0 and up
+App72,Finance,4.6,1372.0,70M,"10000,000+",Paid,3.49,Mature 17+,Action,"May 5, 2023",6.1.1,4.0 and up
+App73,Entertainment,3.9,894.0,12M,"10000,000+",Free,0,Everyone,Productivity,"May 5, 2023",3.0.1,8.0 and up
+App74,Productivity,4.8,1749.0,73M,"10000,000+",Paid,0,Mature 17+,Productivity,"April 20, 2023",2.1.0,6.0 and up
+App75,Productivity,4.9,533.0,57M,"10000,000+",Free,0,Everyone,Lifestyle,"February 15, 2023",3.0.1,4.0 and up
+App76,Health,4.2,1868.0,7M,"10,000+",Paid,0,Everyone,Social,"February 15, 2023",5.3.3,6.0 and up
+App77,Tools,4.8,1734.0,31M,"1,000+",Paid,0,Everyone,Entertainment,"February 15, 2023",2.1.0,4.1 and up
+App78,Finance,3.5,3005.0,28M,"1,000+",Paid,2.99,Mature 17+,Tools,"March 10, 2023",6.1.1,6.0 and up
+App79,Lifestyle,4.4,2617.0,37M,"5000,000+",Paid,0,Teen,Finance,"February 15, 2023",3.0.1,6.0 and up
+App80,Health,3.3,936.0,67M,"1,000+",Free,0,Teen,Social,"January 1, 2023",1.0.0,4.1 and up
+App81,Game,4.4,4546.0,98M,"10,000+",Paid,0,Everyone,Health & Fitness,"February 15, 2023",7.0.0,8.0 and up
+App82,Entertainment,5.0,4089.0,54M,"5,000+",Paid,0,Mature 17+,Social,"January 1, 2023",2.1.0,5.0 and up
+App83,Education,3.3,2904.0,73M,"5000,000+",Free,0,Everyone,Social,"January 1, 2023",6.1.1,5.0 and up
+App84,Productivity,4.6,4368.0,51M,"1000,000+",Free,4.99,Teen,Education,"March 10, 2023",1.0.0,9.0 and up
+App85,Lifestyle,4.1,4218.0,9M,"500,000+",Paid,0,Teen,Entertainment,"April 20, 2023",4.5.2,6.0 and up
+App86,Health,3.8,4504.0,40M,"100,000+",Paid,1.99,Mature 17+,Education,"March 10, 2023",6.1.1,8.0 and up
+App87,Game,4.5,877.0,60M,"1,000+",Paid,0,Teen,Finance,"April 20, 2023",3.0.1,7.1 and up
+App88,Health,4.0,1399.0,26M,"10,000+",Free,1.99,Teen,Entertainment,"March 10, 2023",4.5.2,8.0 and up
+App89,Finance,4.7,1076.0,63M,"5000,000+",Free,0,Teen,Tools,"March 10, 2023",1.0.0,5.0 and up
+App90,Entertainment,4.7,3521.0,40M,"10,000+",Paid,2.99,Teen,Education,"April 20, 2023",5.3.3,5.0 and up
+App91,Social,3.6,215.0,12M,"100,000+",Free,0,Mature 17+,Education,"January 1, 2023",3.0.1,8.0 and up
+App92,Social,4.1,2235.0,73M,"10,000+",Paid,1.99,Teen,Lifestyle,"March 10, 2023",4.5.2,4.1 and up
+App93,Entertainment,3.0,876.0,57M,"5,000+",Free,1.99,Everyone,Education,"January 1, 2023",1.0.0,9.0 and up
+App94,Finance,4.8,1859.0,88M,"50,000+",Free,0,Mature 17+,Tools,"May 5, 2023",1.0.0,6.0 and up
+App95,Game,3.3,1714.0,36M,"10,000+",Free,0,Everyone,Finance,"April 20, 2023",2.1.0,9.0 and up
+App96,Social,3.4,1292.0,18M,"1,000+",Paid,0,Mature 17+,Education,"May 5, 2023",6.1.1,8.0 and up
+App97,Game,3.7,252.0,76M,"5,000+",Free,0,Teen,Lifestyle,"April 20, 2023",3.0.1,7.1 and up
+App98,Social,3.3,2095.0,24M,"1000,000+",Free,0,Everyone,Productivity,"January 1, 2023",3.0.1,4.1 and up
+App99,Social,4.3,2925.0,84M,"5000,000+",Paid,1.99,Everyone,Action,"May 5, 2023",5.3.3,6.0 and up
+App100,Finance,4.3,1413.0,64M,"100,000+",Free,0,Teen,Education,"March 10, 2023",7.0.0,7.1 and up
+App_NaN_1,Social,4.3,2495.0,63M,"10000,000+",,,,Education,,,
+App_NaN_2,Social,4.4,2052.0,83M,"500,000+",Paid,,,Entertainment,,7.0.0,8.0 and up
+App_NaN_3,,,,,,Free,0,Mature 17+,Productivity,,4.5.2,
+App_NaN_4,Lifestyle,,,,,Paid,,,,"May 5, 2023",7.0.0,9.0 and up
+App_NaN_5,,,,,"10000,000+",,,Everyone,Finance,,,4.0 and up
+App_NaN_6,Game,,424.0,67M,,,0,Teen,Productivity,"February 15, 2023",,
+App_NaN_7,Health,,,31M,,Free,0,,Entertainment,"April 20, 2023",,6.0 and up
+App_NaN_8,,,814.0,,,Free,,,Education,,7.0.0,5.0 and up
+App_NaN_9,Finance,3.2,,96M,,Paid,1.99,Mature 17+,Action,"May 5, 2023",5.3.3,
+App_NaN_10,Entertainment,,2440.0,,"5,000+",,,Teen,Finance,,,8.0 and up

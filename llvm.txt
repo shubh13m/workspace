@@ -1,0 +1,14 @@
+LLVM : Low level virtual machine.
+
+Better to say it is Compilation infrastructure.
+
+front end take .c file , converts it to .ll file
+CLANG is used as frontend
+
+middle end - takes .ll file and produces .ll file.
+OPT tool in LLVM is the middle end
+
+backend - takes .ll file produces machine output.
+LLC tool in LLVM is the backend. 
+
+LLVM is the backend 
